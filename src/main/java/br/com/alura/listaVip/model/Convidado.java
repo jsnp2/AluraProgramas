@@ -1,11 +1,10 @@
 package br.com.alura.listaVip.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "convidado")
+@Entity(name="convidado")
 public class Convidado {
 
 	@Id
@@ -15,7 +14,8 @@ public class Convidado {
 	
 	private String nome;
 	private String email;
-	private String tel;
+	private String telefone;
+	
 	public long getId() {
 		return id;
 	}
@@ -35,10 +35,10 @@ public class Convidado {
 		this.email = email;
 	}
 	public String getTel() {
-		return tel;
+		return telefone;
 	}
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setTel(String telefone) {
+		this.telefone = telefone;
 	}
 	
 }

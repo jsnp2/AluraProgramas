@@ -33,5 +33,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Administrador/Downloads/slf4j-1.7.22/slf4j-api-1.7.22.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrador/Downloads/mysql-connector-java-5.1.40.tar/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
