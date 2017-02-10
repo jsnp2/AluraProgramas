@@ -1,12 +1,21 @@
 package br.com.alura.listaVip.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 @Entity(name="convidado")
 public class Convidado {
+	public Convidado(){}
 
+	public Convidado(String nome, String email, String telefone){
+	    this.nome = nome;
+	    this.email = email;
+	    this.telefone = telefone;
+	}
+	
 	@Id
 	@GeneratedValue
 	private long id;
@@ -16,6 +25,12 @@ public class Convidado {
 	private String email;
 	private String telefone;
 	
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	public long getId() {
 		return id;
 	}
@@ -34,11 +49,7 @@ public class Convidado {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTel() {
-		return telefone;
-	}
-	public void setTel(String telefone) {
-		this.telefone = telefone;
-	}
 	
 }
+
+
