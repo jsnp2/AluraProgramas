@@ -15,6 +15,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity(name = "convidado")
 public class Convidado implements UserDetails{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Convidado() {
 	}
 
