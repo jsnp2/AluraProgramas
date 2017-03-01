@@ -97,10 +97,10 @@ public class Convidado implements UserDetails{
 		this.roles = roles;
 	}
 
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		// TODO Auto-generated method stub
-//		return this.roles;
-//	}
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return this.roles;
+	}
 
 	public String getPassword() {
 		// TODO Auto-generated method stub
