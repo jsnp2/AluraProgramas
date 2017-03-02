@@ -9,15 +9,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.context.annotation.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity(name = "convidado")
-public class Convidado implements UserDetails{
-	/**
-	 * 
-	 */
+public class Convidado implements UserDetails {
+
+	private List<Roles> roles = new ArrayList<Roles>();
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.roles;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	public Convidado() {
@@ -46,8 +49,6 @@ public class Convidado implements UserDetails{
 
 	@Column(name = "senha")
 	private String senha;
-
-	private List<Role> roles = new ArrayList<Role>();
 
 	public String getSenha() {
 		return senha;
@@ -89,18 +90,13 @@ public class Convidado implements UserDetails{
 		this.email = email;
 	}
 
-	public List<Role> getRoles() {
+	public List<Roles> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
+	public void setRoles(List<Roles> roles) {
 		this.roles = roles;
 	}
-
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		// TODO Auto-generated method stub
-//		return this.roles;
-//	}
 
 	public String getPassword() {
 		// TODO Auto-generated method stub
@@ -114,7 +110,7 @@ public class Convidado implements UserDetails{
 
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isAccountNonLocked() {

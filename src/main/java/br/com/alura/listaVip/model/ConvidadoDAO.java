@@ -3,25 +3,33 @@ package br.com.alura.listaVip.model;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-import br.com.alura.listaVip.repository.Usuario;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
 
-public class ConvidadoDAO {
 
+@Repository
+public class ConvidadoDAO implements UserDetailsService {
 
+	@PersistenceContext
 	private EntityManager manager;
 	
 	
-	public Convidado find (String email){
+	public Convidado loadUserByUsername (String email){
 		 List<Convidado> convidados = manager.createQuery("select u from Convidado where u.email = :email", Convidado.class)
 		            .setParameter("email", email)
 		            .getResultList();
 
 		    if(convidados.isEmpty()){
-		        throw new RuntimeException("O usuário "+ email +" não foi encontrado");
+		        throw new UsernameNotFoundException("O usuário "+ email +" não foi encontrado");
 		    }
 
 		    return convidados.get(0);
 		
 	}
+
+
+	
 }
