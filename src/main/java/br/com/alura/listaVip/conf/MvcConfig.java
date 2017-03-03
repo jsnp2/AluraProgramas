@@ -1,4 +1,4 @@
-package br.com.alura.listaVip;
+package br.com.alura.listaVip.conf;
 
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;

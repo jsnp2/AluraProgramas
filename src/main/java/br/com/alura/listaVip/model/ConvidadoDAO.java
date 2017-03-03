@@ -18,7 +18,7 @@ public class ConvidadoDAO implements UserDetailsService {
 	
 	
 	public Convidado loadUserByUsername (String email){
-		 List<Convidado> convidados = manager.createQuery("select u from Convidado where u.email = :email", Convidado.class)
+		 List<Convidado> convidados = manager.createQuery("select u from Convidado u where u.email = :email", Convidado.class)
 		            .setParameter("email", email)
 		            .getResultList();
 

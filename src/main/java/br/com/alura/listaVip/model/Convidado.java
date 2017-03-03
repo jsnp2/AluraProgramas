@@ -6,8 +6,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity(name = "convidado")
 public class Convidado implements UserDetails {
 
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Roles> roles = new ArrayList<Roles>();
 
 	public Collection<? extends GrantedAuthority> getAuthorities() {
